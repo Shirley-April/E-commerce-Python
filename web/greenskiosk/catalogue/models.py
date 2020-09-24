@@ -35,8 +35,8 @@ class Product(models.Model):
     supplier = models.ForeignKey(ProductSupplier, on_delete=models.CASCADE)
     kiosk = models.ForeignKey(Kiosk, on_delete=models.CASCADE)
     number_in_stock = models.IntegerField()
-    # p = models.ImageField(_(""), upload_to=None, height_field=None, width_field=None, max_length=None)
-    product_image = models.ImageField(upload_to='images/')
+    
+    product_image = models.ImageField(upload_to="images")
 
     def __str__(self):
         return self.title
