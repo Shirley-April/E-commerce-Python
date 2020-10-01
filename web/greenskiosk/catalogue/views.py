@@ -21,9 +21,12 @@ def upload_products(request):
         if form.is_valid():
             
             form.save()
-        return redirect('products_list')
+            return redirect('products_list')
+        # else:
+            # reload the page and show the form error
 
     else:
         form = ProductForm
     return render(request, 'catalogue/upload_products.html', {'form': form} )
+
 
